@@ -1,0 +1,261 @@
+
+            body {
+                font-family: Arial;
+                margin: 0;
+                }
+            
+            .header {
+                overflow: hidden;
+                background-color: white;
+              padding-left: 100px;
+              padding-right: 100px;
+              padding-top: 60px;
+              padding-bottom: 0px;
+              text-align: left;
+              color: black;
+              font-size: 5vw;  /* 1vw=1%ekrana*/
+              
+    }
+      
+    .navigation a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding-right: 52px;
+      padding-bottom: 30px;
+      text-decoration: none;
+      font-size: 25px; 
+      text-transform: uppercase;
+    }
+    
+    .navigation a:hover {
+      color: purple;
+    }
+    
+    .navigation a.active {
+      color: purple;
+    }
+    
+    
+    @media screen and (max-width: 500px) {
+      .header a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+    }
+    .container {
+        max-width: 100%;
+        margin-left: 100px;
+        margin-right: 100px;
+        background-color: white;
+    }
+    .container img {
+      width: 100%;
+    }
+   
+    h2 {
+        color: purple;
+        text-transform: uppercase;
+        font-size: 40px;
+    }
+    h3{
+        padding-top: 40px;
+        padding-bottom: 20px;
+        font-size: 25px;
+        text-transform: uppercase;
+        color: purple;
+    }
+    h4{
+        font-size: 2.2vw;
+        color: purple;
+        text-transform: uppercase;
+    }
+    h5 {
+        color: purple;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 38px;
+    }
+    p{
+        font-size: 20px;
+    }
+    
+    
+    * {
+      box-sizing: border-box; /*padding ne utice na definisanu sirinu diva*/
+    }
+    
+    .column {
+      float: left;
+      width: 25%;
+      padding: 0 10px;
+      padding-top: 150px;
+      padding-bottom: 70px;
+    }
+    
+    .column_projekcija{
+      float: left;
+      width: 50%;
+      padding: 0 10px;
+      padding-top: 10px;
+      padding-bottom: 70px;
+    }
+    
+    .column_filmovi{
+        float: left;
+        width: 33%;
+
+        padding: 0 10px;
+        padding-top: 10px;
+        padding-bottom: 70px;
+      }
+
+    .column_filmovi img{
+        width: 100%;
+    }
+
+    .column_kontakt{
+        float: left;
+        width: 50%;
+        padding: 0 10px;
+        padding-top: 10px;
+        padding-bottom: 70px;
+      }
+      
+    .column_nagrade{
+        float: left;
+        width: 50%;
+        padding: 0 10px;
+        padding-top: 10px;
+        padding-bottom: 70px;
+      }
+      .column_nagrade img{
+          width: 100%;
+      }
+
+    
+    
+    .row:after {
+      content: "";
+      display: table;
+      clear: both; /*brise prethodni float*/
+    }
+    
+    /* Responsive kolone */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+        .column_projekcija {
+          width: 100%;
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+      @media screen and (max-width: 600px) {
+          .column_filmovi {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+          }
+        }
+    
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      text-align: center;
+      background-color: white;
+      }
+    .card a{
+        text-decoration: none;
+        color: black;
+    }
+    .card hr{
+        margin-bottom: 60px;
+        height: 2px;
+        border-width: 0;
+        color: gray;
+        background-color: gray;
+    }
+    .card img{
+      transition: transform 0.5s; /* vreme pojavljivanja*/
+    }
+    .card img:hover{
+      transform: scale(1.05); /*koliko ce se povecati*/
+    }
+
+    
+#table-1 {
+	margin-top:35px;
+	width:100%;
+	border:1px solid grey;
+	color:#000;
+	font-size:18px;
+	line-height:47px
+}
+#table-1 td {
+	padding:0 0 0 37px;
+}
+.grey{
+	background-color: rgb(240, 200, 240)
+}
+#table-2 {
+	margin-top:35px;
+	width:100%;
+	border:1px solid grey;
+	color:#000;
+	font-size:18px;
+	line-height:47px;
+
+}
+.pink{
+	background-color: rgb(240, 200, 240)
+}
+#table-2 td {
+	padding:0 0 0 37px;
+  border: 1px solid gray;
+}
+
+
+
+
+
+button {
+    font-size: 25px;
+  width: 100%;  
+  background-color: purple;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: violet;
+}
+button a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+    footer {
+      text-align: left;
+      padding: 6px;
+      background-color: violet;
+      color: white;
+      }
+    footer p {
+        padding-left: 170px;
+        font-size: 14px;
+    }

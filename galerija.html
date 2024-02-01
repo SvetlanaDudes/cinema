@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Galerija</title>
+<link rel="stylesheet"  href="css/style.css">
+<style>
+  
+  .slides {
+    width: 1200px;
+    height: 600px;
+    display: block; /*postavka prikaza-novi red*/
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; /*sadrzaj koji napusta klasu da se sakrije*/
+  }
+  
+  .slides input {
+    display: none; /*sakriti input*/
+  }
+  
+  .slide-container {
+    display: block; /*napravi se novi red*/
+  }
+  @media screen and (max-width: 1200px) {
+      .slides {
+        width: 100%;
+      }}
+  .slide {
+    position: absolute;
+    opacity: 0;
+    display: block;
+    transform: scale(0);
+    transition-duration: 0.7s ease-in-out;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .nav label {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    opacity: 0.2;
+    transition: opacity 0.2s; /*da se poveca vidljivost*/
+    color: #fff;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 580px;
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+  }
+  
+  .nav label:hover {
+    opacity: 1;/*puna vidljivost*/
+  }
+  
+  .nav .next {
+    right: 0;
+  }
+  
+  input:checked + .slide-container .slide {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+  }
+  
+  input:checked + .slide-container .nav label {
+    display: block;
+  }
+   
+  
+</style>
+
+</head>
+<body>
+  <header>
+    <div class="header">
+        <h1>BIOSKOP <br> SVETLANA</h1>
+      <div class="navigation">
+      <nav>
+         <a href="index.html">Početna</a></li>
+         <a href="nagrade.html">Nagrade</a></li>
+         <a href="projekcija.html">Projekcije</a></li>
+         <a class="active" href="galerija.html">Galerija</a></li>
+         <a href="kontakt.html">Kontakt</a></li>
+         <a href="rezervacija.html">Rezervacija</a></li>
+       </nav>
+    </div>
+</div>
+</header>
+
+<h5>Galerija</h5>
+
+	<ul class="slides">
+		<input type="radio" name="radio-btn" id="img-1" checked />
+		<li class="slide-container">
+		<div class="slide">
+			<img src="slike/logo.jpg" />
+		</div>
+    <div class="nav">
+			<label for="img-5" class="prev">&#x2039;</label>
+			<label for="img-2" class="next">&#x203a;</label>
+    </div>
+		</li>
+		<input type="radio" name="radio-btn" id="img-2" />
+		<li class="slide-container">
+		<div class="slide">
+			<img src="slike/foto05.jpg" />
+		</div>
+		<div class="nav">
+			<label for="img-1" class="prev">&#x2039;</label>
+			<label for="img-3" class="next">&#x203a;</label>
+			</div>
+		</li>
+		
+    <input type="radio" name="radio-btn" id="img-3" />
+		<li class="slide-container">
+		<div class="slide">
+			<img src="slike/foto04.jpeg" />
+		</div>
+		<div class="nav">
+			<label for="img-2" class="prev">&#x2039;</label>
+			<label for="img-4" class="next">&#x203a;</label>
+			</div>
+		</li>
+		<input type="radio" name="radio-btn" id="img-4"  />
+		<li class="slide-container">
+		<div class="slide">
+			<img src="slike/foto01.jpeg" />
+		</div>
+		<div class="nav">
+			<label for="img-3" class="prev">&#x2039;</label>
+			<label for="img-5" class="next">&#x203a;</label>
+			</div>
+		</li>
+    
+    <input type="radio" name="radio-btn" id="img-5" />
+		<li class="slide-container">
+		<div class="slide">
+			<img src="slike/foto07.jpeg" />
+		</div>
+    
+		<div class="nav">
+			<label for="img-4" class="prev">&#x2039;</label>
+			<label for="img-1" class="next">&#x203a;</label>
+			</div>
+		</li>
+				
+	</ul>
+<br><br>
+  <footer>
+      <p>Autor: Svetlana Dudeš<br>
+      <a href="mailto:svetlanais2920@gs.viser.edu.rs">svetlanais2920@gs.viser.edu.rs</a></p>
+    </footer>
+		
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervacija</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        input[type=text], select, textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          margin-top: 6px;
+          margin-bottom: 16px;
+          font-size: 20px;
+        }
+
+        label{
+            font-size: 25px;
+        }
+        
+        .vreme{
+            max-width: 100%;
+            padding-right: 100px;
+            font-size: 20px;
+        }
+        button {
+            font-size: 25px;
+          width: 100%;  
+          background-color: purple;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-top: 20px;
+        }
+        
+        button:hover {
+          background-color: violet;
+        }
+        button a{
+            text-decoration: none;
+            color: white;
+        }
+        .column_kontakt{
+          float: left;
+          width: 50%;
+          padding: 10px ;
+        }
+
+      
+      @media screen and (max-width: 600px) {
+        .column_kontakt {
+          width: 100%;
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+      
+        </style>
+</head>
+<body>
+<header>
+    <div class="header">
+        <h1>BIOSKOP <br> SVETLANA</h1>
+      <div class="navigation">
+      <nav>
+         <a href="index.html">Početna</a></li>
+         <a href="nagrade.html">Nagrade</a></li>
+         <a href="projekcija.html">Projekcije</a></li>
+         <a href="galerija.html">Galerija</a></li>
+         <a href="kontakt.html">Kontakt</a></li>
+         <a class="active" href="rezervacija.html">Rezervacija</a></li>
+       </nav>
+    </div>
+</div>
+</header>
+
+<div class="container">
+    <h5>Rezervišite Vaš film</h5>
+
+          <form action="" id="Forma" name="Forma">
+            
+            <label for="ime">Ime i prezime</label>
+            <input type="text" id="ime" name="ime" required placeholder="Unesite Vaše ime i prezime">
+
+
+            <label for="email">E-mail</label>
+            <input type="text" id="email" name="email" required placeholder="example@gmail.com">
+
+
+            <label for="telefon">Broj telefona</label>
+            <input type="text" id="telefon" name="telefon" required placeholder="+38164/22-11-123">
+
+            <label for="film" id="izaberite_film">Izaberite film</label>
+            <select id="film" name="film" required>
+            <option value="Južni Vetar 2: UBRZANJE">Južni Vetar 2: UBRZANJE</option>
+            <option value="Toma">Toma</option>
+            <option value="Zlatni Dečko">Zlatni Dečko</option>
+            <option value="Dara iz Jasenovca">Dara iz Jasenovca</option>
+            <option value="Kingsman 3: Početak">Kingsman 3: Početak</option>
+            <option value="Kliford">Kliford</option>
+            <option value="Matrix 4: Uskrsnuća">Matrix 4: Uskrsnuća</option>
+            <option value="No Time To Die: Bond 25">No Time To Die: Bond 25</option>
+            <option value="Spider Man: Put Bez Povratka">Spider Man: Put Bez Povratka</option>
+            </select>
+
+            <br><br><label for="vreme">Odaberite vreme projekcije:</label>
+            <br><input type="radio" id="deset" name="vreme" checked value="10:00">
+            <label for="10" id="10" class="vreme">10h</label>
+            <input type="radio" id="12" name="vreme" value="12:00">
+            <label for="12" class="vreme">12h</label>
+            <input type="radio" id="14" name="vreme" value="14:00">
+            <label for="14" class="vreme">14h</label>
+            <input type="radio" id="16" name="vreme" value="16h">
+            <label for="16" class="vreme">16h</label>
+            <input type="radio" id="18" name="vreme" value="18h">
+            <label for="18" class="vreme">18h</label>
+            <input type="radio" id="20" name="vreme" value="20h">
+            <label for="20" class="vreme">20h</label>
+            <input type="radio" id="22" name="vreme" value="22h">
+            <label for="22" class="vreme">22h</label>
+            
+            
+            <br><br><br><label for="karte">Broj karata:</label>
+            <input type="number" min="1" id="karte" name="karte" value="1" required>
+            
+        <br><br><button onclick="provera()">Pošalji</button> 
+        <br>
+        <button id="prevera_rezervacije"><a href="provera_rezervacije.html">Proverite Vašu Rezervaciju</a></button>
+        <br><br>
+            </form>
+</div>
+
+<script>
+    function provera(){
+    var ime= document.Forma.ime.value;
+    var email = document.Forma.email.value;
+    var telefon = document.Forma.telefon.value;
+    var radio = document.getElementsByName('vreme');
+    var film = document.Forma.film.value;
+    var karte= document.Forma.karte.value;
+    var vrednost=0;
+    const pattern = /[+][3][8][1][6][0-9]{1}[/][0-9]{2}[-][0-9]{2}[-][0-9]{3}$/g;
+    
+    for(var i=0; i<radio.length;i++){
+        if(radio[i].checked===true){
+            vrednost= radio[i].value;
+        }
+    }
+
+    if(ime=== null || ime===""){
+        document.getElementById("ime").style.border='3px solid red';
+        alert("Unesite Vaše ime i prezime!");
+        return false;
+    }
+
+    else if(email=== null || email===""){
+        document.getElementById("email").style.border='3px solid red';
+        alert("Unesite mejl!");
+        return false;
+    }
+    else if(telefon === null || telefon === ""){
+        document.getElementById("telefon").style.border='3px solid red';
+        alert("Unesite broj telefona!");
+        return false;
+    }
+    else if(!(telefon.match(pattern))){
+        document.getElementById("telefon").style.border='3px solid red';
+        alert("Unesite broj telefona u pravilnom formatu!");
+        return false;
+    }
+    else if (film===null || film===""){
+        document.getElementById("film").style.border="3px solid red";
+        alert("Odaberite film koji želite da gledate")
+        return false
+    }
+    else if(karte<1){ 
+    document.getElementById("karte").style.border='3px solid red';
+    alert("Broj karata mora biti 1 ili vise!!!");
+    return false;
+        
+    }
+
+    else{
+        localStorage.setItem("ime", ime);
+        localStorage.setItem("email", email);
+        localStorage.setItem("telefon", telefon);
+        localStorage.setItem("vreme", vrednost );
+        localStorage.setItem("film", film);
+        localStorage.setItem("karte", karte);
+        alert("Uspešno ste rezervisali!");
+        return true;
+    }
+
+}
+</script>
+
+
+<footer>
+    <p>Autor: Svetlana Dudeš<br>
+    <a href="mailto:svetlanais2920@gs.viser.edu.rs">svetlanais2920@gs.viser.edu.rs</a></p>
+  </footer>
+
+
+</body>
+</html>

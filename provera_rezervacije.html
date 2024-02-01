@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provera Rezervacije</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="container">
+
+          <table id="table-1">
+            <tr>
+              <td>Ime i prezime</td>
+              <td id="ime"></td>
+            </tr>
+            <tr class="grey">
+              <td>E-mail</td>
+              <td id="email"></td>
+            </tr>
+            <tr>
+              <td>Telefon</td>
+              <td id="telefon"></td>
+            </tr>
+            <tr class="grey">
+              <td>Film</td>
+              <td id="film"></td>
+            </tr>
+            <tr>
+              <td>Vreme</td>
+              <td id="vreme"></td>
+            </tr>
+            <tr class="grey">
+              <td>Broj Karata  </td>
+              <td id="karte"></td>
+            </tr>
+          </table>
+          <button onclick="Prikaži()">Prikaži</button>
+          <button onclick="Ukloni()">Obriši podatke</button>
+        </div>
+    
+        <script>
+            function Prikaži(){
+                document.getElementById("ime").innerHTML = localStorage.getItem("ime")
+                document.getElementById("email").innerHTML = localStorage.getItem("email")
+                document.getElementById("telefon").innerHTML = localStorage.getItem("telefon")
+                document.getElementById("film").innerHTML = localStorage.getItem("film")
+                document.getElementById("vreme").innerHTML = localStorage.getItem("vreme")
+                document.getElementById("karte").innerHTML = localStorage.getItem("karte")
+        
+            }
+        
+            function Ukloni(){
+                localStorage.removeItem("ime");
+                localStorage.removeItem("email");
+                localStorage.removeItem("telefon");
+                localStorage.removeItem("film");
+                localStorage.removeItem("vreme");
+                localStorage.removeItem("karte");
+                document.getElementById("ime").innerHTML = " ";
+                document.getElementById("email").innerHTML = " ";
+                document.getElementById("telefon").innerHTML = " ";
+                document.getElementById("film").innerHTML = " ";
+                document.getElementById("vreme").innerHTML = " ";
+                document.getElementById("karte").innerHTML = " ";
+        
+            }
+        </script>
+
+
+
+
+</body>
+</html>
